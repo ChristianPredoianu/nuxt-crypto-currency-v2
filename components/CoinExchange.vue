@@ -1,25 +1,34 @@
 <template>
   <div>
     <div
-      class="bg-blue-800 text-white flex justify-center py-2  border-b border-gray-600"
+      class="bg-light-dark-blue text-white text-center flex px-8 py-2 border-b border-gray-600 lg:rounded-md lg:mt-2 lg:border-none"
     >
-      <p class="text-start w-4/12 lg:w-1/6">{{ coin.id }}</p>
-      <p class="w-4/12 lg:w-1/6">{{ formatCurrency(coin.price) }}</p>
+      <p class="w-4/12 lg:w-2/12">{{ coin.id }}</p>
+      <p class="w-4/12 lg:w-2/12">{{ formatCurrency(coin.price) }}</p>
+
       <p
-        class="text-center rounded-md w-3/12 lg:w-1/6"
-        :class="coin['1d'].price_change_pct > 0 ? 'bg-green-500' : 'bg-red-500'"
+        class="w-4/12 lg:w-2/12"
+        :class="
+          coin['1d'].price_change_pct > 0 ? 'text-green-500' : 'text-red-500'
+        "
       >
         {{ coin["1d"].price_change_pct }}
       </p>
-      <p v-if="!mobileView" class="lg:w-1/6">1.254</p>
-      <p v-if="!mobileView" class="lg:w-1/6">1.785</p>
-      <p v-if="!mobileView" class="lg:w-1/6">1.785</p>
+      <p v-if="!mobileView" class="lg:w-2/12">
+        {{ formatCurrency(coin["1d"].volume) }}
+      </p>
+      <p v-if="!mobileView" class="lg:w-2/12">
+        {{ parseInt(coin["1d"].volume_change).toLocaleString("en-IN") }}
+      </p>
+      <p v-if="!mobileView" class="lg:w-2/12">1.785</p>
     </div>
   </div>
 </template>
 
 <script>
+import formatCurrency from "@/mixins/formatCurrency";
 export default {
+  mixins: [formatCurrency],
   props: {
     coin: {
       type: Object
@@ -34,12 +43,6 @@ export default {
   methods: {
     handleView() {
       this.mobileView = window.innerWidth <= 1024;
-    },
-    formatCurrency(num) {
-      return new Intl.NumberFormat("en-us", {
-        style: "currency",
-        currency: "USD"
-      }).format(num);
     }
   },
 
