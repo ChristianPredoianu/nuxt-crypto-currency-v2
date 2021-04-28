@@ -19,25 +19,75 @@
       </div>
     </section>
 
-    <section class="py-12 ">
-      <div class="flex flex-wrap justify-center gap-2 lg:flex-no-wrap lg:gap-8">
+    <section class="py-12">
+      <div class="flex flex-wrap justify-between px-20 gap-2 lg:flex-no-wrap">
         <TopCoinExchange
-          v-for="coin in coinsData.slice(0, 4)"
+          v-for="coin in coinData.slice(0, 4)"
           :key="coin.id"
           :coin="coin"
           class="w-5/12 lg:w-2/12"
         />
       </div>
+
       <div class="text-gray-400 pt-12 pb-2 lg:px-20">
         <ul class="flex px-8 text-center">
           <li class="w-4/12 lg:w-2/12">Currency</li>
-          <li class="w-4/12 lg:w-2/12">Price</li>
-          <li class="w-4/12 lg:w-2/12">24/h price change %</li>
-          <li v-if="!mobileView" class="lg:w-2/12">24/h volume</li>
-          <li v-if="!mobileView" class="lg:w-2/12">24/h volume change</li>
-          <li v-if="!mobileView" class="lg:w-2/12">24/h volume change %</li>
+          <li class="w-4/12 lg:w-2/12">
+            Price
+            <div class="flex flex-col items-center">
+              <font-awesome-icon
+                class="text-3xl"
+                :icon="['fas', 'sort-up']"
+                @click="sort('price', 'asc')"
+              />
+            </div>
+          </li>
+          <li class="w-4/12 lg:w-2/12">
+            24/h price change %
+            <div class="flex flex-col items-center">
+              <font-awesome-icon
+                class="text-3xl"
+                :icon="['fas', 'sort-up']"
+                @click="sort('price_change_pct', 'asc')"
+              />
+            </div>
+          </li>
+          <li v-if="!mobileView" class="lg:w-2/12">
+            24/h volume
+            <div class="flex flex-col items-center">
+              <font-awesome-icon
+                class="text-3xl"
+                :icon="['fas', 'sort-up']"
+                @click="sort('volume', 'asc')"
+              />
+            </div>
+          </li>
+          <li v-if="!mobileView" class="lg:w-2/12">
+            24/h volume change
+            <div class="flex flex-col items-center">
+              <font-awesome-icon
+                class="text-3xl"
+                :icon="['fas', 'sort-up']"
+                @click="sort('volume_change', 'asc')"
+              />
+            </div>
+          </li>
+          <li v-if="!mobileView" class="lg:w-2/12">
+            24/h volume change %
+            <div class="flex flex-col items-center">
+              <font-awesome-icon
+                class="text-3xl"
+                :icon="['fas', 'sort-up']"
+                @click="sort('volume_change_pct', 'asc')"
+              />
+            </div>
+          </li>
         </ul>
-        <CoinExchange v-for="coin in coinsData" :key="coin.id" :coin="coin" />
+        <CoinExchange
+          v-for="coin in sortedCoinData"
+          :key="coin.id"
+          :coin="coin"
+        />
       </div>
     </section>
   </div>
@@ -48,12 +98,14 @@ export default {
   data() {
     return {
       mobileView: true,
-      coinsData: []
+      coinData: [],
+      orderBy: "",
+      orderOption: ""
     };
   },
 
   async fetch() {
-    this.coinsData = await fetch(
+    this.coinData = await fetch(
       "https://api.nomics.com/v1/currencies/ticker?key=4c494109a687bef4f73e1e017317e61b&per-page=50&page=1"
     ).then(res => res.json());
   },
@@ -61,13 +113,43 @@ export default {
   methods: {
     handleView() {
       this.mobileView = window.innerWidth <= 1024;
+    },
+
+    sort(by, option) {
+      if (this.orderBy === by) {
+        if (this.orderOption === "asc") {
+          this.orderOption = "";
+        } else if (this.orderOption === "") {
+          this.orderOption = "asc";
+        }
+      } else {
+        this.orderOption = option;
+        this.orderBy = by;
+      }
+    }
+  },
+
+  computed: {
+    sortedCoinData: function() {
+      if (this.orderBy !== "price" && this.orderOption === "asc") {
+        return this.coinData.slice().sort((a, b) => {
+          return b["1d"][this.orderBy] - a["1d"][this.orderBy];
+        });
+      }
+
+      if (this.orderOption === "asc") {
+        return this.coinData.slice().sort((a, b) => {
+          return b[this.orderBy] - a[this.orderBy];
+        });
+      }
+
+      return this.coinData;
     }
   },
 
   mounted() {
     this.handleView();
     window.addEventListener("resize", this.handleView);
-    console.log(this.coinsData);
   }
 };
 </script>
