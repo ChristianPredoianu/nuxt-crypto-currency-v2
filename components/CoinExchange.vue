@@ -17,10 +17,24 @@
       <p v-if="!mobileView" class="lg:w-2/12">
         {{ formatCurrency(coin["1d"].volume) }}
       </p>
-      <p v-if="!mobileView" class="lg:w-2/12">
+      <p
+        v-if="!mobileView"
+        class="lg:w-2/12"
+        :class="
+          coin['1d'].volume_change > 0 ? 'text-green-500' : 'text-red-500'
+        "
+      >
         {{ parseInt(coin["1d"].volume_change).toLocaleString("en-IN") }}
       </p>
-      <p v-if="!mobileView" class="lg:w-2/12">1.785</p>
+      <p
+        v-if="!mobileView"
+        class="lg:w-2/12"
+        :class="
+          coin['1d'].volume_change_pct > 0 ? 'text-green-500' : 'text-red-500'
+        "
+      >
+        {{ coin["1d"].volume_change_pct }}
+      </p>
     </div>
   </div>
 </template>
