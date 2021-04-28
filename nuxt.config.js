@@ -54,14 +54,31 @@ export default {
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     "@nuxtjs/tailwindcss"
   ],
+
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     ["@nuxtjs/axios"],
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    [
+      "@nuxtjs/fontawesome",
+      {
+        imports: [
+          {
+            set: "@fortawesome/free-solid-svg-icons",
+            icons: ["faSortDown", "faSortUp"]
+          },
+          {
+            set: "@fortawesome/free-brands-svg-icons",
+            icons: ["fab"]
+          }
+        ]
+      }
+    ]
   ],
+
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
