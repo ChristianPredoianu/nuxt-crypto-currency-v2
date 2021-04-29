@@ -3,7 +3,11 @@
     <div
       class="bg-light-dark-blue text-white text-center flex px-8 py-2 border-b border-gray-600 lg:rounded-md lg:mt-2 lg:border-none"
     >
-      <p class="w-4/12 lg:w-2/12">{{ coin.id }}</p>
+      <p class="w-4/12 flex lg:w-2/12">
+        <img :src="coin.logo_url" alt="coin logo" class="w-5 mr-4" />{{
+          coin.id
+        }}
+      </p>
       <p class="w-4/12 lg:w-2/12">{{ formatCurrency(coin.price) }}</p>
 
       <p
