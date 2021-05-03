@@ -47,33 +47,92 @@
         />
       </div>
 
-      <div class="text-gray-400 pb-2 mt-12 lg:px-20">
-        <ul class="flex px-8 text-center">
-          <li class="w-4/12 lg:w-2/12">
+      <div class="flex text-gray-400 mt-12 lg:px-10">
+        <div class="w-1/3 text-left pl-4 lg:w-1/6 lg:pl-0">
+          <p class="">Currency</p>
+        </div>
+        <div class="w-1/3 flex flex-col items-center lg:w-1/6 ">
+          <p>Price</p>
+          <font-awesome-icon
+            class="text-3xl mt-8"
+            :icon="['fas', 'sort-up']"
+            @click="sort('price', 'asc')"
+          />
+        </div>
+        <div
+          class="w-1/3 flex flex-col items-center justify-between text-center lg:w-1/6"
+        >
+          <p>1d price change</p>
+          <font-awesome-icon
+            class="text-3xl"
+            :icon="['fas', 'sort-up']"
+            @click="sort('price_change_pct', 'asc')"
+          />
+        </div>
+        <div
+          class="flex flex-col items-center justify-between text-center lg:w-1/6"
+          v-if="!mobileView"
+        >
+          <p>1d volume</p>
+          <font-awesome-icon
+            class="text-3xl"
+            :icon="['fas', 'sort-up']"
+            @click="sort('volume', 'asc')"
+          />
+        </div>
+        <div
+          class="flex flex-col items-center justify-between text-center lg:w-1/6"
+          v-if="!mobileView"
+        >
+          <p>1d volume change</p>
+          <font-awesome-icon
+            class="text-3xl"
+            :icon="['fas', 'sort-up']"
+            @click="sort('volume_change', 'asc')"
+          />
+        </div>
+        <div
+          class="flex flex-col items-center justify-between text-center lg:w-1/6"
+          v-if="!mobileView"
+        >
+          <p>1d volume change %</p>
+          <font-awesome-icon
+            class="text-3xl"
+            :icon="['fas', 'sort-up']"
+            @click="sort('volume_change_pct', 'asc')"
+          />
+        </div>
+        <!--         <ul class="flex text-center text-xs">
+          <li class="w-2/6 lg:w-2/12">
             Currency
           </li>
-          <li class="w-4/12 flex flex-col justify-between lg:w-2/12">
+          <li
+            class="w-2/6 flex flex-col items-center justify-between lg:w-2/12"
+          >
             Price
-            <div class="mt-8">
-              <font-awesome-icon
-                class="text-3xl "
-                :icon="['fas', 'sort-up']"
-                @click="sort('price', 'asc')"
-              />
-            </div>
+
+            <font-awesome-icon
+              class="text-3xl mt-2"
+              :icon="['fas', 'sort-up']"
+              @click="sort('price', 'asc')"
+            />
           </li>
-          <li class="w-4/12 flex flex-col justify-between lg:w-2/12">
-            24/h price change %
-            <div class="">
-              <font-awesome-icon
-                class="text-3xl"
-                :icon="['fas', 'sort-up']"
-                @click="sort('price_change_pct', 'asc')"
-              />
-            </div>
+          <li
+            class="w-2/6 flex flex-col items-center justify-between lg:w-2/12"
+          >
+            1d price change
+
+            <font-awesome-icon
+              class="text-3xl"
+              :icon="['fas', 'sort-up']"
+              @click="sort('price_change_pct', 'asc')"
+            />
           </li>
-          <li v-if="!mobileView" class="lg:w-2/12">
-            24/h volume
+          <li
+            v-if="!mobileView"
+            class="flex flex-col items-center justify-between lg:w-2/12"
+          >
+            1d volume
             <div class="flex flex-col ">
               <font-awesome-icon
                 class="text-3xl"
@@ -82,8 +141,11 @@
               />
             </div>
           </li>
-          <li v-if="!mobileView" class="lg:w-2/12">
-            24/h volume change
+          <li
+            v-if="!mobileView"
+            class="flex flex-col items-center justify-between lg:w-2/12"
+          >
+            1d volume change
             <div class="flex flex-col ">
               <font-awesome-icon
                 class="text-3xl"
@@ -92,8 +154,11 @@
               />
             </div>
           </li>
-          <li v-if="!mobileView" class="lg:w-2/12">
-            24/h volume change %
+          <li
+            v-if="!mobileView"
+            class="flex flex-col items-center justify-between lg:w-2/12"
+          >
+            1d volume change %
             <div class="flex flex-col ">
               <font-awesome-icon
                 class="text-3xl"
@@ -102,21 +167,21 @@
               />
             </div>
           </li>
-        </ul>
-        <div v-if="!searchTerm">
-          <CoinExchange
-            v-for="coin in sortedCurrencyData(currencyData)"
-            :key="coin.id"
-            :coin="coin"
-          />
-        </div>
-        <div v-else>
-          <CoinExchange
-            v-for="coin in filteredCurrencyData"
-            :key="coin.id"
-            :coin="coin"
-          />
-        </div>
+        </ul> -->
+      </div>
+      <div v-if="!searchTerm">
+        <CoinExchange
+          v-for="coin in sortedCurrencyData(currencyData)"
+          :key="coin.id"
+          :coin="coin"
+        />
+      </div>
+      <div v-else>
+        <CoinExchange
+          v-for="coin in filteredCurrencyData"
+          :key="coin.id"
+          :coin="coin"
+        />
       </div>
     </section>
   </div>
@@ -143,7 +208,7 @@ export default {
 
   methods: {
     handleView() {
-      this.mobileView = window.innerWidth <= 1024;
+      this.mobileView = window.innerWidth <= 1023;
     },
 
     sort(by, option) {
