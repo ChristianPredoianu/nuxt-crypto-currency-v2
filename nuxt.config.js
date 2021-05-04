@@ -68,7 +68,7 @@ export default {
         imports: [
           {
             set: "@fortawesome/free-solid-svg-icons",
-            icons: ["faSortDown", "faSortUp", "faSearch"]
+            icons: ["faSortDown", "faSortUp", "faSearch", "faPlus"]
           },
           {
             set: "@fortawesome/free-brands-svg-icons",
