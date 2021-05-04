@@ -32,7 +32,7 @@
             coin['1d'].volume_change > 0 ? 'text-green-500' : 'text-red-500'
           "
         >
-          {{ parseInt(coin["1d"].volume_change).toLocaleString("en-IN") }}
+          {{ formatCurrency(coin["1d"].volume_change) }}
         </p>
       </div>
       <div class="lg:w-1/6" v-if="!mobileView">
