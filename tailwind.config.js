@@ -5,8 +5,15 @@
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
 module.exports = {
+  darkMode: "class",
   theme: {
     extend: {
+      screens: {
+        "3xl": "1636px"
+      },
+      spacing: {
+        "1/7": "14%"
+      },
       colors: {
         "darkest-blue": "#01193a",
         "light-dark-blue": "#002c69"
