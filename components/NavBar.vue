@@ -2,7 +2,7 @@
   <div>
     <header
       :class="isOpen ? 'bg-gray-900' : 'bg-black'"
-      class="transition duration-1000 sm:flex sm:justify-between sm:items-center sm:px-4 sm:py-3"
+      class="transition duration-1000 py-6 sm:flex sm:justify-between sm:items-center sm:px-4 "
     >
       <div
         class="flex items-center justify-between px-4 py-3 sm:p-0 sm:w-3/5 md:w-9/12 lg:w-3/4 lg:ml-4"
@@ -11,8 +11,9 @@
 
         <div
           class="flex justify-between items-center mr-4 "
-          @click="isDarkMode = !isDarkMode"
+          @click="toggleDarkMode"
         >
+          <h1 class="text-white">{{ isDarkMode }}</h1>
           <p class="mr-2 text-xs text-white">Dark Mode</p>
           <div
             class="w-12 h-6 flex items-center bg-gray-300 rounded-full p-1 duration-300 ease-in-out cursor-pointer"
@@ -52,6 +53,16 @@ export default {
       isOpen: false,
       isDarkMode: false
     };
+  },
+  methods: {
+    toggleDarkMode() {
+      this.isDarkMode = !this.isDarkMode;
+      if (this.isDarkMode) {
+        localStorage.setItem("darkMode", true);
+      } else {
+        localStorage.setItem("darkMode", false);
+      }
+    }
   }
 };
 </script>

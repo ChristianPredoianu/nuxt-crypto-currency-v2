@@ -25,7 +25,7 @@
         />
       </div>
     </section>
-    <section class="py-20 ">
+    <section class="py-20">
       <CryptoItem v-for="coin in currencyData" :key="coin.id" :coin="coin" />
     </section>
   </div>
