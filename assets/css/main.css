@@ -1,0 +1,23 @@
+:root {
+  --color: #462e24;
+  --color-primary: #8d3c16;
+  --color-secondary: #62b6ff;
+  --bg: #f3f3f3;
+  --bg-secondary: #fff;
+  --border-color: rgb(107, 29, 29);
+}
+
+.dark-mode {
+  --bg: #262833;
+  --color: #e4e4e4;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--color);
+  transition: background-color 0.3s;
+}
+
+/* a {
+  color: var(--bg-secondary);
+} */
