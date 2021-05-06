@@ -1,7 +1,7 @@
 <template>
   <div class="lg:px-10">
     <div
-      class="bg-light-dark-blue text-white text-center flex py-4 border-b border-gray-600 lg:rounded-md lg:mt-2 lg:border-none"
+      class="shadow text-center flex py-4 border border-gray-600 lg:rounded-md lg:mt-2"
     >
       <div class="w-1/3 text-center flex items-center pl-4 lg:w-1/6 ">
         <img :src="coin.logo_url" alt="coin logo" class="w-4" />
