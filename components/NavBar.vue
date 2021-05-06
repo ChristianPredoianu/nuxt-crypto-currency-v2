@@ -1,27 +1,33 @@
 <template>
   <div>
     <header
-      :class="isOpen ? 'bg-gray-900' : 'bg-black'"
-      class="transition duration-1000 py-6 sm:flex sm:justify-between sm:items-center sm:px-4 "
+      class="transition duration-1000 py-6 sm:flex sm:justify-between sm:items-center sm:px-4 border-b border-gray-700 "
     >
       <div
-        class="flex items-center justify-between px-4 py-3 sm:p-0 sm:w-3/5 md:w-9/12 lg:w-3/4 lg:ml-4"
+        class="flex items-center justify-between px-4 py-3 sm:p-0 sm:w-3/6 md:w-6/12 lg:w-7/12 lg:ml-4 xl:w-2/3 3xl:w-3/4"
       >
-        <p class="text-white text-l font-bold xl:text-2xl">CryptoInfo.</p>
+        <NuxtLink to="/" custom v-slot="{ href, navigate }"
+          ><p
+            class="text-l font-bold cursor-pointer xl:text-2xl"
+            :href="href"
+            @click="navigate"
+          >
+            CryptoInfo.
+          </p></NuxtLink
+        >
 
         <div
           class="flex justify-between items-center mr-4 "
           @click="toggleDarkMode"
         >
-          <h1 class="text-white">{{ isDarkMode }}</h1>
-          <p class="mr-2 text-xs text-white">Dark Mode</p>
+          <p class="mr-2 text-xs ">Dark Mode</p>
           <div
-            class="w-12 h-6 flex items-center bg-gray-300 rounded-full p-1 duration-300 ease-in-out cursor-pointer"
-            :class="{ 'bg-green-400': isDarkMode }"
+            class="w-12 h-6 flex items-center bg-black rounded-full p-1 duration-300 ease-in-out cursor-pointer"
+            :class="{ 'bg-green-500': isDarkMode }"
           >
             <div
-              class="bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out"
-              :class="{ 'translate-x-6': isDarkMode }"
+              class=" w-4 h-4 rounded-full shadow-md bg-white transform duration-300 ease-in-out"
+              :class="{ 'translate-x-6': isDarkMode, 'bg-white': isDarkMode }"
             ></div>
           </div>
         </div>
@@ -36,11 +42,26 @@
       </div>
       <div
         :class="isOpen ? 'block' : 'hidden'"
-        class="text-white px-2 pt-2 pb-4 sm:flex sm:p-0 lg:mr-8"
+        class=" px-2 pt-2 pb-4 justify-end uppercase sm:flex sm:p-0 sm:6/12 md:5/12 3xl:mr-6"
       >
-        <a href="" class="block px-2 py-1">Link 1 </a>
-        <a href="" class="block mt-1 px-2 py-1 sm:mt-0 sm:ml-2">Link 1 </a>
-        <a href="" class="block mt-1 px-2 py-1 sm:mt-0 sm:ml-2">Link 1 </a>
+        <NuxtLink to="/exchange" custom v-slot="{ href, navigate }">
+          <p
+            class="block px-2 py-1 transition-colors duration-200 hover:text-blue-600 cursor-pointer"
+            :href="href"
+            @click="navigate"
+          >
+            Exchange
+          </p></NuxtLink
+        >
+        <NuxtLink to="/aboutcrypto" tag="p" custom v-slot="{ href, navigate }">
+          <p
+            class="block mt-1 px-2 py-1 transition-colors duration-200 hover:text-blue-600 sm:mt-0 sm:ml-2 cursor-pointer"
+            :href="href"
+            @click="navigate"
+          >
+            Currency info
+          </p></NuxtLink
+        >
       </div>
     </header>
   </div>
@@ -57,11 +78,9 @@ export default {
   methods: {
     toggleDarkMode() {
       this.isDarkMode = !this.isDarkMode;
-      if (this.isDarkMode) {
-        localStorage.setItem("darkMode", true);
-      } else {
-        localStorage.setItem("darkMode", false);
-      }
+      this.isDarkMode
+        ? ($nuxt.$colorMode.preference = "dark-mode")
+        : ($nuxt.$colorMode.preference = "light-mode");
     }
   }
 };
