@@ -2,7 +2,7 @@
   <div v-if="foundCurrencyById && foundLinks" class="dark">
     <NavBar />
     <section
-      class=" flex flex-col items-center pt-20 pb-16 border-black border-b-2 xl:py-32 dark:bg-black"
+      class=" flex flex-col items-center pt-20 pb-16 border-black border-b-2 xl:py-32 "
     >
       <img :src="foundCurrencyById.iconUrl" alt="currency icon" class="w-24" />
       <h1 class="text-2xl mt-8 lg:text-3xl">
@@ -62,7 +62,7 @@
         </p>
       </div>
     </section>
-    <section class="bg-black text-gray-300 py-20 xl:py-40">
+    <section class=" text-gray-300 py-20 xl:py-40">
       <div class="flex flex-col items-center md:text-xl lg:text-2xl">
         <h3 class="text-2xl mb-6 md:text-3xl xl:mb-20">Stats</h3>
         <div class="w-4/5 flex flex-col mt-4 ">
@@ -169,4 +169,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

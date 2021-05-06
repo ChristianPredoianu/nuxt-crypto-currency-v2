@@ -1,28 +1,33 @@
 <template>
-  <div class="min-h-screen bg-black">
+  <div class="min-h-screen ">
     <NavBar />
+
     <div class="xl:flex xl:justify-center">
       <section
         class="flex flex-col items-center justify-around min-h-screen -mt-8 sm:mt-4 md:flex-row md:items-center md:justify-around md:mt-56 md:min-h-full lg:mt-24
          xl:justify-between xl:mt-48 xl:w-11/12"
       >
-        <div class="text-white flex flex-col ">
-          <div class="border-b-2 border-red-700 w-12"></div>
-          <div>
-            <h1 class="text-white text-2xl mt-4 md:text-4xl lg:text-6xl">
+        <div class=" flex flex-col">
+          <div class="border-b-2 w-12 border-gray-700"></div>
+          <div class="">
+            <h1 class=" text-2xl mt-4 md:text-4xl lg:text-6xl">
               We´re a digital
             </h1>
             <span class="text-xl md:2xl lg:text-4xl">info agency.</span>
           </div>
 
-          <a
-            href=""
-            class=" border-2 border-red-700 text-center mt-4 p-4 hover:bg-red-700 transition-colors duration-500 ease-in-out md:text-xl lg:w-4/12"
-            >Get Started</a
-          >
+          <NuxtLink to="/exchange" custom v-slot="{ href, navigate }"
+            ><p
+              class="text-center mt-4 p-4 border-2 border-gray-700 cursor-pointer transition-colors duration-200 hover:text-gray-700 md:text-xl lg:w-4/12"
+              :href="href"
+              @click="navigate"
+            >
+              Get Started
+            </p>
+          </NuxtLink>
         </div>
 
-        <div class="hidden md:flex xl:w-2/5">
+        <div class="hidden md:flex md:justify-center xl:w-2/5">
           <img src="@/assets/images/watch.png" alt="mobile phone" />
         </div>
 
@@ -37,10 +42,12 @@
       </section>
     </div>
     <section
-      class="flex flex-col items-center pb-12 text-white md:mt-56 md:pb-40 lg:flex-row lg:justify-around lg:mt-52 "
+      class="flex flex-col items-center pb-12 md:mt-56 md:pb-40 lg:flex-row lg:justify-around lg:mt-52 "
       ref="info"
     >
-      <div class="bg-red-600 w-3/4 px-8 py-16 mt-8 md:w-6/12 lg:w-3/12 ">
+      <div
+        class=" w-3/4 px-8 py-16 mt-8 border border-gray-700 md:w-6/12 lg:w-3/12 shadow-xl "
+      >
         <h2
           class="inline-block text-xl pt-4 pb-2 border-b-2 align-text-top md:text-4xl"
         >
@@ -51,7 +58,9 @@
           performance and easy use is often considered an amazing achievement.
         </p>
       </div>
-      <div class="bg-gray-800 w-3/4 px-8 py-16 mt-8 md:w-6/12 lg:w-3/12">
+      <div
+        class="w-3/4 px-8 py-16 mt-8 shadow-xl border border-gray-700 md:w-6/12 lg:w-3/12  r"
+      >
         <h2
           class="inline-block text-xl pt-4 pb-2 border-b-2 align-text-top md:text-4xl"
         >
@@ -62,7 +71,9 @@
           performance and easy use is often considered an amazing achievement.
         </p>
       </div>
-      <div class="bg-gray-900 w-3/4 px-8 py-16 mt-8 md:w-6/12 lg:w-3/12">
+      <div
+        class=" w-3/4 px-8 py-16 mt-8 shadow-xl border border-gray-700 md:w-6/12 lg:w-3/12 "
+      >
         <h2
           class="inline-block text-xl pt-4 pb-2 border-b-2 align-text-top md:text-4xl"
         >
@@ -82,6 +93,16 @@ export default {
   methods: {
     goTo() {
       this.$refs.info.scrollIntoView({ behavior: "smooth" });
+    },
+    toggleBgColors() {
+      return $nuxt.$colorMode.preference === "light-mode"
+        ? "bg-gray-200"
+        : "bg-black";
+    },
+    toggleFontColors() {
+      return $nuxt.$colorMode.preference === "light-mode"
+        ? "text-black"
+        : "text-white";
     }
   }
 };

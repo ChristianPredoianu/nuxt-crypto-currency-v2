@@ -12,7 +12,7 @@
           </p>
         </div>
         <font-awesome-icon
-          class=" text-xl text-black"
+          class=" text-xl "
           :icon="['fa', 'plus']"
           @click="isOpen = !isOpen"
         />
