@@ -1,11 +1,12 @@
 <template>
-  <div class="bg-darkest-blue">
+  <div class="">
     <NavBar />
+
     <section>
-      <div class="bg-black text-white py-32 text-center">
+      <div class=" py-32 text-center border-b border-gray-700">
         <h1 class="font-bold text-3xl ">CryptInfo.com</h1>
         <span
-          class="font-bold text-3xl pb-2 border-b-2 border-solid border-red-700"
+          class="font-bold text-3xl pb-2 border-b-2 border-solid border-gray-700"
           >Exchange</span
         >
 
@@ -33,29 +34,30 @@
         <p class="text-xl invisible">ghost element</p>
         <input
           type="search"
-          class="w-4/12 px-2 mr-4 "
+          class="w-5/12 px-2 py-2 mr-4 md:w-3/12 xl:w-1/12"
           placeholder="Search"
           aria-label="Search currency"
           v-if="isSearchOpen"
           v-model="searchTerm"
         />
         <font-awesome-icon
-          class="text-xl text-white"
+          class="text-xl "
           :icon="['fas', 'search']"
           @click="isSearchOpen = !isSearchOpen"
         />
       </div>
 
-      <div class="flex text-gray-400 mt-12 lg:px-10">
+      <div class="flex  mt-12 lg:px-10">
         <div class="w-1/3 text-left pl-4 lg:w-1/6 lg:pl-0">
           <p class="">Currency</p>
         </div>
         <div class="w-1/3 flex flex-col items-center lg:w-1/6 ">
           <p>Price</p>
           <font-awesome-icon
-            class="text-3xl mt-8"
+            class="text-3xl mt-8 cursor-pointer"
+            :class="{ 'text-green-500': selectedSort === 1 }"
             :icon="['fas', 'sort-up']"
-            @click="sort('price', 'asc')"
+            @click="sort('price', 'asc', 1)"
           />
         </div>
         <div
@@ -63,9 +65,10 @@
         >
           <p>1d price change</p>
           <font-awesome-icon
-            class="text-3xl"
+            class="text-3xl cursor-pointer"
+            :class="{ 'text-green-500': selectedSort === 2 }"
             :icon="['fas', 'sort-up']"
-            @click="sort('price_change_pct', 'asc')"
+            @click="sort('price_change_pct', 'asc', 2)"
           />
         </div>
         <div
@@ -74,9 +77,10 @@
         >
           <p>1d volume</p>
           <font-awesome-icon
-            class="text-3xl"
+            class="text-3xl cursor-pointer"
+            :class="{ 'text-green-500': selectedSort === 3 }"
             :icon="['fas', 'sort-up']"
-            @click="sort('volume', 'asc')"
+            @click="sort('volume', 'asc', 3)"
           />
         </div>
         <div
@@ -85,9 +89,10 @@
         >
           <p>1d volume change</p>
           <font-awesome-icon
-            class="text-3xl"
+            class="text-3xl cursor-pointer"
+            :class="{ 'text-green-500': selectedSort === 4 }"
             :icon="['fas', 'sort-up']"
-            @click="sort('volume_change', 'asc')"
+            @click="sort('volume_change', 'asc', 4)"
           />
         </div>
         <div
@@ -96,9 +101,10 @@
         >
           <p>1d volume change %</p>
           <font-awesome-icon
-            class="text-3xl"
+            class="text-3xl cursor-pointer"
+            :class="{ 'text-green-500': selectedSort === 5 }"
             :icon="['fas', 'sort-up']"
-            @click="sort('volume_change_pct', 'asc')"
+            @click="sort('volume_change_pct', 'asc', 5)"
           />
         </div>
       </div>
@@ -129,7 +135,8 @@ export default {
       orderBy: "",
       orderOption: "",
       isSearchOpen: false,
-      searchTerm: null
+      searchTerm: null,
+      selectedSort: null
     };
   },
 
@@ -144,7 +151,15 @@ export default {
       this.mobileView = window.innerWidth <= 1023;
     },
 
-    sort(by, option) {
+    toggleActiveSort(sortArrow) {
+      if (this.orderOption !== "") {
+        this.selectedSort = sortArrow;
+      } else {
+        this.selectedSort = null;
+      }
+    },
+
+    sort(by, option, arrowNum) {
       if (this.orderBy === by) {
         if (this.orderOption === "asc") {
           this.orderOption = "";
@@ -155,6 +170,7 @@ export default {
         this.orderOption = option;
         this.orderBy = by;
       }
+      this.toggleActiveSort(arrowNum);
     },
 
     sortedCurrencyData(arr) {
