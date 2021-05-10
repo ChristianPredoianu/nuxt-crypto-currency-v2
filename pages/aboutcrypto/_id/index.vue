@@ -1,8 +1,7 @@
 <template>
-  <div v-if="foundCurrencyById && foundLinks" class="dark">
-    <NavBar />
+  <div v-if="foundCurrencyById && foundLinks">
     <section
-      class=" flex flex-col items-center pt-20 pb-16 border-black border-b-2 xl:py-32 "
+      class="flex flex-col items-center pt-20 pb-16 border-b border-gray-700 xl:py-32 "
     >
       <img :src="foundCurrencyById.iconUrl" alt="currency icon" class="w-24" />
       <h1 class="text-2xl mt-8 lg:text-3xl">
@@ -62,47 +61,47 @@
         </p>
       </div>
     </section>
-    <section class=" text-gray-300 py-20 xl:py-40">
+    <section class="py-20 xl:py-40">
       <div class="flex flex-col items-center md:text-xl lg:text-2xl">
         <h3 class="text-2xl mb-6 md:text-3xl xl:mb-20">Stats</h3>
         <div class="w-4/5 flex flex-col mt-4 ">
-          <div class="flex justify-between border-white border-b">
-            <p class="text-gray-500 pb-2">Rank:</p>
+          <div class="flex justify-between border-b border-gray-700">
+            <p class="pb-2">Rank:</p>
             <p class="ml-2">{{ foundCurrencyById.rank }}</p>
           </div>
-          <div class="flex justify-between mt-4 border-white border-b">
-            <p class="text-gray-500 pb-2">Price:</p>
+          <div class="flex justify-between mt-4 border-b border-gray-700">
+            <p class=" pb-2">Price:</p>
             <p class="ml-2">
               {{ formatCurrency(foundCurrencyById.price) }}
             </p>
           </div>
-          <div class="flex justify-between mt-4 border-b">
-            <p class="text-gray-500 pb-2">First seen:</p>
+          <div class="flex justify-between mt-4 border-b border-gray-700">
+            <p class=" pb-2">First seen:</p>
             <p class="ml-2">
               {{ formatTimestamp(foundCurrencyById.firstSeen) }}
             </p>
           </div>
-          <div class="flex justify-between mt-4 border-b">
-            <p class="text-gray-500 pb-2">Supply:</p>
+          <div class="flex justify-between mt-4 border-b border-gray-700">
+            <p class="pb-2">Supply:</p>
             <p class="ml-2">
               {{ intFormatNumber(foundCurrencyById.circulatingSupply) }}
             </p>
           </div>
-          <div class="flex justify-between mt-4 border-b">
-            <p class="text-gray-500 pb-2">All time high price:</p>
+          <div class="flex justify-between mt-4 border-b border-gray-700">
+            <p class="pb-2">All time high price:</p>
             <p class="ml-2">
               {{ formatCurrency(foundCurrencyById.allTimeHigh.price) }}
             </p>
           </div>
-          <div class="flex justify-between mt-4 border-b">
-            <p class="text-gray-500 pb-2">All time high date:</p>
+          <div class="flex justify-between mt-4 border-b border-gray-700">
+            <p class="pb-2">All time high date:</p>
             <p class="ml-2">
               {{ formatTimestamp(foundCurrencyById.allTimeHigh.timestamp) }}
             </p>
           </div>
           <div class="flex justify-between mt-4">
-            <p class="text-gray-500">Website:</p>
-            <a href="" target="_blank">
+            <p>Website:</p>
+            <a :href="foundCurrencyById.websiteUrl" target="_blank">
               <font-awesome-icon
                 class="text-2xl cursor-pointer transition duration-200 transform hover:text-blue-800 hover:scale-110"
                 :icon="['fab', 'chrome']"
@@ -162,11 +161,6 @@ export default {
       );
       return links;
     }
-  },
-  mounted() {
-    console.log(this.currencyData);
   }
 };
 </script>
-
-<style scoped></style>

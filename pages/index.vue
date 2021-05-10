@@ -1,16 +1,14 @@
 <template>
   <div class="min-h-screen ">
-    <NavBar />
-
     <div class="xl:flex xl:justify-center">
       <section
         class="flex flex-col items-center justify-around min-h-screen -mt-8 sm:mt-4 md:flex-row md:items-center md:justify-around md:mt-56 md:min-h-full lg:mt-24
          xl:justify-between xl:mt-48 xl:w-11/12"
       >
-        <div class=" flex flex-col">
+        <div class="flex flex-col">
           <div class="border-b-2 w-12 border-gray-700"></div>
-          <div class="">
-            <h1 class=" text-2xl mt-4 md:text-4xl lg:text-6xl">
+          <div>
+            <h1 class="text-2xl mt-4 md:text-4xl lg:text-6xl">
               We´re a digital
             </h1>
             <span class="text-xl md:2xl lg:text-4xl">info agency.</span>
@@ -36,7 +34,7 @@
             src="@/assets/images/arrow-down.png"
             alt="arrow"
             @click="goTo"
-            class="cursor-pointer "
+            class="cursor-pointer"
           />
         </div>
       </section>
@@ -46,7 +44,7 @@
       ref="info"
     >
       <div
-        class=" w-3/4 px-8 py-16 mt-8 border border-gray-700 md:w-6/12 lg:w-3/12 shadow-xl "
+        class="w-3/4 px-8 py-16 mt-8 border border-gray-700 md:w-6/12 lg:w-3/12 shadow-xl "
       >
         <h2
           class="inline-block text-xl pt-4 pb-2 border-b-2 align-text-top md:text-4xl"
@@ -59,7 +57,7 @@
         </p>
       </div>
       <div
-        class="w-3/4 px-8 py-16 mt-8 shadow-xl border border-gray-700 md:w-6/12 lg:w-3/12  r"
+        class="w-3/4 px-8 py-16 mt-8 shadow-xl border border-gray-700 md:w-6/12 lg:w-3/12"
       >
         <h2
           class="inline-block text-xl pt-4 pb-2 border-b-2 align-text-top md:text-4xl"
@@ -72,7 +70,7 @@
         </p>
       </div>
       <div
-        class=" w-3/4 px-8 py-16 mt-8 shadow-xl border border-gray-700 md:w-6/12 lg:w-3/12 "
+        class="w-3/4 px-8 py-16 mt-8 shadow-xl border border-gray-700 md:w-6/12 lg:w-3/12 "
       >
         <h2
           class="inline-block text-xl pt-4 pb-2 border-b-2 align-text-top md:text-4xl"
@@ -93,25 +91,7 @@ export default {
   methods: {
     goTo() {
       this.$refs.info.scrollIntoView({ behavior: "smooth" });
-    },
-    toggleBgColors() {
-      return $nuxt.$colorMode.preference === "light-mode"
-        ? "bg-gray-200"
-        : "bg-black";
-    },
-    toggleFontColors() {
-      return $nuxt.$colorMode.preference === "light-mode"
-        ? "text-black"
-        : "text-white";
     }
   }
 };
 </script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-</style>

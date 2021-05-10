@@ -1,10 +1,8 @@
 <template>
-  <div class="">
-    <NavBar />
-
+  <div>
     <section>
-      <div class=" py-32 text-center border-b border-gray-700">
-        <h1 class="font-bold text-3xl ">CryptInfo.com</h1>
+      <div class="py-32 text-center border-b border-gray-700">
+        <h1 class="font-bold text-3xl">CryptInfo.com</h1>
         <span
           class="font-bold text-3xl pb-2 border-b-2 border-solid border-gray-700"
           >Exchange</span
@@ -19,7 +17,7 @@
       </div>
     </section>
 
-    <section class="py-40 ">
+    <section class="py-40">
       <div
         class="flex flex-wrap justify-between px-8 gap-8 text-center lg:flex-no-wrap"
       >
@@ -47,7 +45,7 @@
         />
       </div>
 
-      <div class="flex  mt-12 lg:px-10">
+      <div class="flex mt-12 lg:px-10">
         <div class="w-1/3 text-left pl-4 lg:w-1/6 lg:pl-0">
           <p class="">Currency</p>
         </div>
@@ -205,5 +203,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped></style>

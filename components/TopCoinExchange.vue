@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="py-8 lg:rounded-md shadow-lg border border-gray-700">
+    <div class="py-8 rounded-md shadow-lg border border-gray-700">
       <p>{{ coin.id }}</p>
       <p>{{ formatCurrency(coin.price) }}</p>
       <p

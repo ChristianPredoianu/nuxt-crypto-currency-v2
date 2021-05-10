@@ -75,7 +75,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped></style>
-
-//coinrankingb757a068d29044b6c56fc93a4efa20046ce0df40af674fbf

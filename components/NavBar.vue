@@ -1,7 +1,7 @@
 <template>
   <div>
     <header
-      class="transition duration-1000 py-6 sm:flex sm:justify-between sm:items-center sm:px-4 border-b border-gray-700 "
+      class="transition duration-1000 py-6 sm:flex sm:justify-between sm:items-center sm:px-4 border-b border-gray-700"
     >
       <div
         class="flex items-center justify-between px-4 py-3 sm:p-0 sm:w-3/6 md:w-6/12 lg:w-7/12 lg:ml-4 xl:w-2/3 3xl:w-3/4"
@@ -26,7 +26,7 @@
             :class="{ 'bg-green-500': isDarkMode }"
           >
             <div
-              class=" w-4 h-4 rounded-full shadow-md bg-white transform duration-300 ease-in-out"
+              class="w-4 h-4 rounded-full shadow-md bg-white transform duration-300 ease-in-out"
               :class="{ 'translate-x-6': isDarkMode, 'bg-white': isDarkMode }"
             ></div>
           </div>
@@ -42,7 +42,7 @@
       </div>
       <div
         :class="isOpen ? 'block' : 'hidden'"
-        class=" px-2 pt-2 pb-4 justify-end uppercase sm:flex sm:p-0 sm:6/12 md:5/12 3xl:mr-6"
+        class="px-2 pt-2 pb-4 justify-end uppercase sm:flex sm:p-0 sm:6/12 md:5/12 3xl:mr-6"
       >
         <NuxtLink to="/exchange" custom v-slot="{ href, navigate }">
           <p
@@ -81,9 +81,18 @@ export default {
       this.isDarkMode
         ? ($nuxt.$colorMode.preference = "dark-mode")
         : ($nuxt.$colorMode.preference = "light-mode");
+    },
+
+    getLocalColorMode() {
+      const localColorMode = localStorage.getItem("nuxt-color-mode");
+      localColorMode === "dark-mode"
+        ? (this.isDarkMode = true)
+        : (this.isDarkMode = false);
     }
+  },
+
+  mounted() {
+    this.getLocalColorMode();
   }
 };
 </script>
-
-<style lang="scss" scoped></style>

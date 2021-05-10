@@ -1,9 +1,10 @@
 <template>
   <div>
+    <NavBar />
     <Nuxt />
   </div>
 </template>
-
+<script></script>
 <style>
 html {
   font-family: "Poppins", Arial, sans-serif;
