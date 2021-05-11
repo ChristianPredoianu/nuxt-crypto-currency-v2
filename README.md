@@ -3,7 +3,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/ChristianPredoianu/nuxt-crypto-currency-v2">
-    <img src="src/assets/images/netclone.png" alt="Logo" width="80" height="80">
+    <img src="src/assets/images/watch.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Crypto info</h3>
@@ -88,23 +88,21 @@ To get a local copy up and running follow these simple steps.
    ```sh
    cd nuxt-crypto
    ``` 
-4. cd into folder
-   ```sh
-   cd nuxt-crypto
-   ``` 
-5. serve with hot reload at localhost:3000
+4. serve with hot reload at localhost:3000
    ```sh
     npm run dev
    ``` 
-6. build for production and launch server
+5. build for production and launch server
    ```sh
     npm run build
     npm run start
    ```
-7. generate static project
+6. generate static project
    ```sh
     npm run generate
    ```    
+   
+   For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
    
    
    
@@ -115,14 +113,10 @@ To get a local copy up and running follow these simple steps.
 
 To start using Netclone you have two options:
 
-1.1 Sign in to Netclone with an existing account for demo purposes https://netclonevue.netlify.app/signIn:<br/>
-    <b>Username</b>: test@test.com  
-    <b>Password:</b> testingnetclone
-    => choose an existing profile
-   
-1.2 Signup to Netclone with a <b>dummy email</b> made up by you. E.g (john@whatever.com) It doesn't need to be a valid email. And choose a <b>password.</b> 
-    => Add a profile and continue with the selected profile.
-
+1. Choose prefered color mode. Light mode or dark mode.
+2. Navigate to 'Exchange' to see the exchange courses.
+3. Navigate to 'Currency info' to see more info about different cryptocurrencies.
+ 
 
 
 <!-- LICENSE -->
@@ -142,11 +136,10 @@ Project Link: [https://github.com/ChristianPredoianu/netflix-clone-vue](https://
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-
-* [Vue Awesome Swiper](https://github.com/surmon-china/vue-awesome-swiper)
-* [Vue Simple Accordion](https://github.com/tkhquang/vue-simple-accordion)
-* [Vuex Persisted State](https://github.com/robinvdvleuten/vuex-persistedstate)
+* [Google Fonts](https://fonts.google.com/)
+* [Axios](https://github.com/axios/axios)
 * [Font-Awesome](https://fontawesome.com/)
+* [Nomics API](https://nomics.com/docs/)
 
 
 
