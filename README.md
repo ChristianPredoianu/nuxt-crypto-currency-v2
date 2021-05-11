@@ -84,13 +84,32 @@ To get a local copy up and running follow these simple steps.
    ```sh
    npm install
    ``` 
-2. Install NPM packages
+3. cd into folder
    ```sh
-   npm install
+   cd nuxt-crypto
    ``` 
-
-
-
+4. cd into folder
+   ```sh
+   cd nuxt-crypto
+   ``` 
+5. serve with hot reload at localhost:3000
+   ```sh
+    npm run dev
+   ``` 
+6. build for production and launch server
+   ```sh
+    npm run build
+    npm run start
+   ```
+7. generate static project
+   ```sh
+    npm run generate
+   ```    
+   
+   
+   
+   
+   
 <!-- USAGE EXAMPLES -->
 ## Usage
 
