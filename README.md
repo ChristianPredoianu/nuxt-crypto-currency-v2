@@ -111,7 +111,7 @@ To get a local copy up and running follow these simple steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-To start using Netclone you have two options:
+To start using Crypto info:
 
 1. Choose prefered color mode. Light mode or dark mode.
 2. Navigate to 'Exchange' to see the exchange courses.
