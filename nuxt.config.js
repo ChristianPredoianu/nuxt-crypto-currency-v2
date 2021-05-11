@@ -1,3 +1,4 @@
+import axios from "axios";
 export default {
   /*
    ** Nuxt rendering mode
@@ -91,14 +92,20 @@ export default {
     ]
   ],
 
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
   axios: {},
-  /*
-   ** Build configuration
-   ** See https://nuxtjs.org/api/configuration-build/
-   */
-  build: {}
+
+  build: {},
+  generate: {
+    routes() {
+      return axios
+        .get("https://api.coinranking.com/v1/public/coins/")
+        .then(res => {
+          const routes = [];
+          for (const key in res.data.data.coins) {
+            routes.push(`/aboutcrypto/${key}`);
+          }
+          return routes;
+        });
+    }
+  }
 };
