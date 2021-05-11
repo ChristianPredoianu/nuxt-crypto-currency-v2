@@ -57,7 +57,7 @@ This project is made to show exchange and info about cryptocurrencies.
 
 ### Built With
 
-* [Nuxt.js](https://vuejs.org/)
+* [Nuxt.js](https://nuxtjs.org/)
 * [TailwindCSS](https://tailwindcss.com/)
 
 
