@@ -130,7 +130,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Christian Predoianu - [@linkedin](https://se.linkedin.com/in/christian-predoianu-369218157) - christianpredoianu@yahoo.com
 
-Project Link: [https://github.com/ChristianPredoianu/nuxt-crypto-currency-v2](https://github.com/ChristianPredoianu/netflix-clone-vue)
+Project Link: [](https://github.com/ChristianPredoianu/nuxt-crypto-currency-v2)
 
 
 
@@ -163,23 +163,4 @@ Project Link: [https://github.com/ChristianPredoianu/nuxt-crypto-currency-v2](ht
 
 
 
-# nuxt-crypto
 
-## Build Setup
-
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
