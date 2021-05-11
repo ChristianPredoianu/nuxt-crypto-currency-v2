@@ -84,27 +84,8 @@ To get a local copy up and running follow these simple steps.
    ```sh
    npm install
    ``` 
-   3. cd into folder    ```sh
-   cd nuxt-crypto
-   ``` 
-3. 
-   ```sh
-$ npm run dev
-   ```
-4. serve with hot reload at localhost:3000
-   ```sh
-$ npm run dev
-   ```
-   
-5. build for production and launch server
-   ```sh
-$ npm run build
-$ npm run start
-   ```
-6. generate static project
-   ```sh
-$ npm run generate
-   ```
+
+
 
 
 <!-- USAGE EXAMPLES -->
