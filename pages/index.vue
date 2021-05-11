@@ -30,11 +30,10 @@
         </div>
 
         <div class="md:hidden">
-          <img
-            src="@/assets/images/arrow-down.png"
-            alt="arrow"
-            @click="goTo"
-            class="cursor-pointer"
+          <font-awesome-icon
+            class="text-3xl cursor-pointer"
+            :icon="['fas', 'sort-down']"
+            @click="goDown"
           />
         </div>
       </section>
@@ -83,13 +82,20 @@
         </p>
       </div>
     </section>
+    <section class="flex justify-center py-10 px-10">
+      <a href="https://nomics.com" target="_blank"
+        ><p>
+          Crypto Market Cap &#38; Pricing Data Provided By Nomics
+        </p></a
+      >
+    </section>
   </div>
 </template>
 
 <script>
 export default {
   methods: {
-    goTo() {
+    goDown() {
       this.$refs.info.scrollIntoView({ behavior: "smooth" });
     }
   }
