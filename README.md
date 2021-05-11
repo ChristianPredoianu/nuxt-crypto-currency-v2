@@ -130,7 +130,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Christian Predoianu - [@linkedin](https://se.linkedin.com/in/christian-predoianu-369218157) - christianpredoianu@yahoo.com
 
-Project Link: [https://github.com/ChristianPredoianu/netflix-clone-vue](https://github.com/ChristianPredoianu/netflix-clone-vue)
+Project Link: [https://github.com/ChristianPredoianu/nuxt-crypto-currency-v2](https://github.com/ChristianPredoianu/netflix-clone-vue)
 
 
 
