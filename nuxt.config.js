@@ -101,7 +101,6 @@ export default {
         .get("https://api.coinranking.com/v1/public/coins/")
         .then(res => {
           const routes = [];
-          console.log(res.data.data);
           res.data.data.coins.forEach(element => {
             routes.push(`/aboutcrypto/${element.id}`);
           });
