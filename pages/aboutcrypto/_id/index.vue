@@ -138,7 +138,10 @@ export default {
         .replace(/<h3[^>]*>/g, "")
         .replace(/<\/?h3[^>]*>/g, "")
         .replace(/<a[^>]*>/g, "")
-        .replace(/<\/?a[^>]*>/g, "");
+        .replace(/<\/?a[^>]*>/g, "")
+        .replace(/&#39;/g, "")
+        .replace(/&rsquo;/g, "")
+        .replace(/lsquo;/g, "");
     },
     intFormatNumber(number) {
       return new Intl.NumberFormat().format(number);
