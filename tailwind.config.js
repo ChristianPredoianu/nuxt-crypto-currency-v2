@@ -15,10 +15,7 @@ module.exports = {
       spacing: {
         "1/7": "14%"
       },
-      colors: {
-        "darkest-blue": "#01193a",
-        "light-dark-blue": "#002c69"
-      }
+      colors: {}
     }
   },
   variants: {},
