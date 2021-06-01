@@ -31,7 +31,10 @@
             ></div>
           </div>
         </div>
-        <div class="sm:hidden">
+        <div
+          class="sm:hidden p-1"
+          :class="{ 'bg-gray-900 rounded-lg': !isDarkMode }"
+        >
           <img
             src="@/assets/images/hamburger.png"
             alt="logo"
