@@ -96,14 +96,15 @@ export default {
 
   build: {},
   generate: {
-    routes() {
-      return axios
+    async routes() {
+      return await axios
         .get("https://api.coinranking.com/v1/public/coins/")
         .then(res => {
           const routes = [];
-          for (const key in res.data.data.coins) {
-            routes.push(`/aboutcrypto/${key}`);
-          }
+          console.log(res.data.data);
+          res.data.data.coins.forEach(element => {
+            routes.push(`/aboutcrypto/${element.id}`);
+          });
           return routes;
         });
     }
