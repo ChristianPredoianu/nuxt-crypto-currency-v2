@@ -51,13 +51,21 @@
 
     <section>
       <div class="flex flex-col items-center py-20 xl:pt-56 xl:pb-64">
-        <h2 class="text-2xl md:text-3xl lg:text-4xl">
+        <h2 class="text-2xl text-center md:text-3xl lg:text-4xl">
           What is <span class="font-bold">{{ foundCurrencyById.name }}</span> ?
         </h2>
         <p
+          v-if="foundCurrencyById.description !== null"
           class="text-center mt-8 px-10 md:text-2xl md:px-16 lg:px-20 lg:text-left xl:px-32"
         >
           {{ replaceTagsInString(foundCurrencyById.description) }}
+        </p>
+        <p
+          v-else
+          class="text-center mt-8 px-10 md:text-2xl md:px-16 lg:px-20 lg:text-left xl:px-32"
+        >
+          No further description details avaliable for this currency at the
+          moment. See stats section.
         </p>
       </div>
     </section>
@@ -133,14 +141,13 @@ export default {
   methods: {
     replaceTagsInString(str) {
       return str
-        .replace(/<p[^>]*>/g, "")
-        .replace(/<\/?p[^>]*>/g, "")
-        .replace(/<h3[^>]*>/g, "")
-        .replace(/<\/?h3[^>]*>/g, "")
-        .replace(/<a[^>]*>/g, "")
-        .replace(/<\/?a[^>]*>/g, "")
+        .replace(/(<([^>]+)>)/gi, "")
+        .replace(/&nbsp/g, "")
         .replace(/&#39;/g, "")
         .replace(/&rsquo;/g, "")
+        .replace(/&rdquo;/g, "")
+        .replace(/&quot;/g, "")
+        .replace(/&ldquo;/g, "")
         .replace(/lsquo;/g, "");
     },
     intFormatNumber(number) {
