@@ -2,8 +2,8 @@
   <div class="min-h-screen ">
     <div class="xl:flex xl:justify-center">
       <section
-        class="container mx-auto flex flex-col items-center min-h-screen -mt-8 sm:mt-4 md:flex-row md:items-center md:justify-around md:mt-56 md:min-h-full lg:mt-24
-          xl:mt-48 xl:w-11/12"
+        class="container mx-auto flex flex-col items-center justify-around min-h-screen -mt-8 sm:mt-4 md:flex-row md:items-center md:mt-56 md:min-h-full lg:mt-24
+          xl:mt-48 "
       >
         <div class="flex flex-col">
           <div class="border-b-2 w-12 border-gray-700"></div>
@@ -39,22 +39,24 @@
       </section>
     </div>
     <section
-      class="container mx-auto  flex flex-col items-center pb-12 md:mt-56 md:pb-40 lg:flex-row lg:justify-around lg:mt-52 "
+      class="container mx-auto flex flex-col items-center pb-12 md:mt-56 md:pb-40 lg:flex-row lg:items-stretch lg:justify-around lg:mt-52 "
       ref="info"
     >
-      <div
-        class="w-3/4 px-8 py-16 mt-8 border border-gray-700 md:w-6/12 lg:w-3/12 shadow-xl "
-      >
-        <h2
-          class="inline-block text-xl pt-4 pb-2 border-b-2 align-text-top md:text-4xl"
-        >
-          Vision
-        </h2>
-        <p class="mt-4 md:text-xl">
-          Our revolutionary feature set is unmatched, but our seamless
-          performance and easy use is often considered an amazing achievement.
-        </p>
-      </div>
+      <AboutUsCard
+        headerText="Payoff"
+        cardText="Interactively procrastinate high-payoff content without backward-compatible data. Quickly cultivate optimal processes and tactical architectures. "
+      />
+
+      <AboutUsCard
+        headerText="Testing"
+        cardText="Quickly aggregate B2B users and worldwide potentialities. Progressively plagiarize resource-leveling e-commerce through resource-leveling core competencies. "
+      />
+
+      <AboutUsCard
+        headerText="Vision"
+        cardText="Appropriately empower dynamic leadership skills after business portals. Globally myocardinh distinctive quality vectors. "
+      />
+      <!-- 
       <div
         class="w-3/4 px-8 py-16 mt-8 shadow-xl border border-gray-700 md:w-6/12 lg:w-3/12"
       >
@@ -80,7 +82,7 @@
           Our revolutionary feature set is unmatched, but our seamless
           performance and easy use is often considered an amazing achievement.
         </p>
-      </div>
+      </div> -->
     </section>
     <section class="flex justify-center py-10 px-10">
       <a href="https://nomics.com" target="_blank"
