@@ -2,7 +2,7 @@
   <div class="min-h-screen ">
     <div class="xl:flex xl:justify-center">
       <section
-        class="flex flex-col items-center justify-around min-h-screen -mt-8 sm:mt-4 md:flex-row md:items-center md:justify-around md:mt-56 md:min-h-full lg:mt-24
+        class="container mx-auto  flex flex-col items-center justify-around min-h-screen -mt-8 sm:mt-4 md:flex-row md:items-center md:justify-around md:mt-56 md:min-h-full lg:mt-24
          xl:justify-between xl:mt-48 xl:w-11/12"
       >
         <div class="flex flex-col">
@@ -39,7 +39,7 @@
       </section>
     </div>
     <section
-      class="flex flex-col items-center pb-12 md:mt-56 md:pb-40 lg:flex-row lg:justify-around lg:mt-52 "
+      class="container mx-auto  flex flex-col items-center pb-12 md:mt-56 md:pb-40 lg:flex-row lg:justify-around lg:mt-52 "
       ref="info"
     >
       <div
