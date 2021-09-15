@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center ">
+  <div class="flex justify-center">
     <div
       class="flex flex-col border-black w-4/5 mt-4"
       :class="[isOpen ? ['border-t-2', 'border-b-2'] : 'border-0']"

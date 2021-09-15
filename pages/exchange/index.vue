@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <div class="container mx-auto border-b border-gray-700">
+      <div class="container mx-auto">
         <div class="py-32 text-center ">
           <h1 class="font-bold text-3xl">CryptInfo.com</h1>
           <span class="font-bold text-3xl pb-2">Exchange</span>
