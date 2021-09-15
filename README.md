@@ -3,7 +3,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/ChristianPredoianu/nuxt-crypto-currency-v2">
-    <img src="assets/images/watch.png" alt="Logo" width="60" height="80">
+    <img src="assets/images/watch.png" alt="Logo" width="150" height="180">
   </a>
 
   <h3 align="center">Crypto info</h3>
