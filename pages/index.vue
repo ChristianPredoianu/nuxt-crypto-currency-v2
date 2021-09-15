@@ -2,8 +2,8 @@
   <div class="min-h-screen ">
     <div class="xl:flex xl:justify-center">
       <section
-        class="container mx-auto  flex flex-col items-center justify-around min-h-screen -mt-8 sm:mt-4 md:flex-row md:items-center md:justify-around md:mt-56 md:min-h-full lg:mt-24
-         xl:justify-between xl:mt-48 xl:w-11/12"
+        class="container mx-auto flex flex-col items-center min-h-screen -mt-8 sm:mt-4 md:flex-row md:items-center md:justify-around md:mt-56 md:min-h-full lg:mt-24
+          xl:mt-48 xl:w-11/12"
       >
         <div class="flex flex-col">
           <div class="border-b-2 w-12 border-gray-700"></div>
@@ -25,7 +25,7 @@
           </NuxtLink>
         </div>
 
-        <div class="hidden md:flex md:justify-center xl:w-2/5">
+        <div class="hidden md:flex md:justify-end xl:w-2/5">
           <img src="@/assets/images/watch.png" alt="mobile phone" />
         </div>
 
