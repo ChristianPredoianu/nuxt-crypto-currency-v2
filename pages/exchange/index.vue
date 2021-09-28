@@ -28,18 +28,18 @@
             class="w-5/12 lg:w-2/12"
           />
         </div>
-        <div class="flex justify-end items-center mt-12 mr-12 py-4 ">
+        <div class="flex justify-end items-center mt-12 mr-12 py-4">
           <p class="text-xl invisible">ghost element</p>
           <input
             type="search"
-            class="w-5/12 px-2 py-2 mr-4 md:w-3/12 xl:w-1/12"
+            class="w-5/12 px-2 py-2 mr-4 md:w-3/12 xl:w-1/12 "
             placeholder="Search"
             aria-label="Search currency"
             v-if="isSearchOpen"
             v-model="searchTerm"
           />
           <font-awesome-icon
-            class="text-xl "
+            class="text-xl cursor-pointer"
             :icon="['fas', 'search']"
             @click="isSearchOpen = !isSearchOpen"
           />
