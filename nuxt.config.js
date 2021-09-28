@@ -52,14 +52,9 @@ export default {
    */
 
   components: {
-    dirs: [
-      "~/components",
-      {
-        path: "~/components/nav/",
-        prefix: "Nav"
-      }
-    ]
+    dirs: ["~/components", "~/components/nav"]
   },
+
   components: true,
   /*
    ** Nuxt.js dev-modules
