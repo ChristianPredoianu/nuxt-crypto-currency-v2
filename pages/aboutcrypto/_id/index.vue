@@ -13,44 +13,7 @@
           {{ foundCurrencyById.name }}
         </h1>
         <div class="w-9/12 flex justify-around mt-16 md:w-2/4 xl:w-1/3">
-          <div v-for="link in foundLinks" :key="link.id">
-            <a :href="link.url" target="_blank">
-              <font-awesome-icon
-                class="text-3xl transition duration-200 transform hover:text-blue-800 hover:scale-110"
-                :icon="['fab', 'twitter-square']"
-                v-if="link.type === 'twitter'"
-            /></a>
-            <a :href="link.url" target="_blank">
-              <font-awesome-icon
-                class="text-3xl transition duration-200 transform hover:text-blue-800 hover:scale-110"
-                :icon="['fab', 'instagram']"
-                v-if="link.type === 'instagram'"
-            /></a>
-            <a :href="link.url" target="_blank">
-              <font-awesome-icon
-                class="text-3xl transition duration-200 transform hover:text-blue-800 hover:scale-110"
-                :icon="['fab', 'youtube']"
-                v-if="link.type === 'youtube'"
-            /></a>
-            <a :href="link.url" target="_blank">
-              <font-awesome-icon
-                class="text-3xl transition duration-200 transform hover:text-blue-800 hover:scale-110"
-                :icon="['fab', 'reddit']"
-                v-if="link.type === 'reddit'"
-            /></a>
-            <a :href="link.url" target="_blank"
-              ><font-awesome-icon
-                class="text-3xl transition duration-200 transform hover:text-blue-800 hover:scale-110"
-                :icon="['fab', 'github']"
-                v-if="link.type === 'github'"
-            /></a>
-            <a :href="link.url" target="_blank">
-              <font-awesome-icon
-                class="text-3xl transition duration-200 transform hover:text-blue-800 hover:scale-110"
-                :icon="['fab', 'facebook']"
-                v-if="link.type === 'facebook'"
-            /></a>
-          </div>
+          <SocialIcons v-for="link in foundLinks" :key="link.id" :link="link" />
         </div>
       </div>
     </section>
