@@ -16,7 +16,7 @@
 
           <NuxtLink to="/exchange" custom v-slot="{ href, navigate }"
             ><p
-              class="text-center mt-4 p-4 border-2 border-gray-700 cursor-pointer transition-colors duration-200 hover:text-gray-700 md:text-xl lg:w-4/12"
+              class="text-center mt-4 p-4 border-2 border-gray-700 cursor-pointer transition-colors duration-200 hover:text-white hover:bg-black md:text-xl lg:w-4/12"
               :href="href"
               @click="navigate"
             >
