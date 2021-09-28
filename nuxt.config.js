@@ -50,6 +50,16 @@ export default {
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
    */
+
+  components: {
+    dirs: [
+      "~/components",
+      {
+        path: "~/components/nav/",
+        prefix: "Nav"
+      }
+    ]
+  },
   components: true,
   /*
    ** Nuxt.js dev-modules
